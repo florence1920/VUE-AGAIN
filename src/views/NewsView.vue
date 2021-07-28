@@ -3,7 +3,9 @@
         <ul class="compoWrap">
             <li v-for="item in this.$store.state.news" v-bind:key="item.id">
                 <span class="point">{{ item.points || 0}}</span>
-                <span class="title">{{ item.title }}</span>
+                <span class="title">
+                    <a v-bind:href="item.url">{{ item.title }}</a>
+                </span>
                 {{ item.time_ago }}               
                 {{ item.user }}
             </li>

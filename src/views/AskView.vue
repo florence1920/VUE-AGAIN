@@ -2,8 +2,14 @@
     <div>
         <ul class="compoWrap">
             <li v-for="item in this.$store.state.ask" v-bind:key="item.id">
-                <span class="point">{{ item.points || 0}}</span>
-                <span class="title">{{ item.title }}</span>
+                <span class="point">
+                    {{ item.points || 0}}
+                </span>
+                <span class="title">
+                    <router-link v-bind:to="`item/${item.id}`">
+                        {{ item.title }}
+                    </router-link>
+                </span>
                 {{ item.time_ago }}               
                 {{ item.user }}
 
