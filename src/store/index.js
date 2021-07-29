@@ -4,7 +4,7 @@ import { fetchNewsList } from '@/api/index.js';
 import { fetchAskList } from '@/api/index.js';
 import { fetchJobsList } from '@/api/index.js';
 import { fetchCommentItem } from '@/api/index.js';
-import { fetchUserInfo } from '@/api/index/js';
+import { fetchUserInfo } from '@/api/index.js';
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
@@ -12,7 +12,8 @@ export const store = new Vuex.Store({
         news:[],
         ask:[],
         jobs:[],
-        item:{}
+        item:{},
+        user:{}
     },
     getters:{
         fetchedItem(state){
@@ -32,8 +33,8 @@ export const store = new Vuex.Store({
         SET_ITEM(state, item){
             state.item = item;
         },
-        SET_USER(){
-            
+        SET_USER(state, user){
+            state.user = user;
         }
     },
     actions:{

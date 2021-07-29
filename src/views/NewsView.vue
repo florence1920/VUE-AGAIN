@@ -7,7 +7,8 @@
                     <a v-bind:href="item.url">{{ item.title }}</a>
                 </span>
                 {{ item.time_ago }}               
-                {{ item.user }}
+                <router-link v-bind:to="`/user/${item.user}`">{{ item.user }}</router-link>
+                
             </li>
         </ul>
     </div>
